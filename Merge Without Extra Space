@@ -1,0 +1,62 @@
+void merge(int arr1[], int arr2[], int n, int m) {
+	    vector<int> v;
+	    int i=0;
+	    int j=0;
+	    while(i<n and j<m)                            //here and is very important we can't use or use and.
+	    {
+	        if(arr1[i]==arr2[j])
+	        {
+	            v.push_back(arr1[i]);                   //these two lines are very important.
+	            v.push_back(arr1[i]);
+	            i++;
+	            j++;
+	        }
+	        else
+	        if(arr1[i]>arr2[j])
+	        {
+	            v.push_back(arr2[j]);
+	            j++;
+	        }
+	        else
+	        if(arr1[i]<arr2[j])
+	        {
+	            v.push_back(arr1[i]);
+	            i++;
+	        }
+	        
+	        
+	    } 
+	    
+	        
+	        while(i<n)
+	        {
+	            v.push_back(arr1[i]);
+	            i++;
+	        }
+	        
+	    
+	        while(j<m)
+	        {
+	            v.push_back(arr2[j]);
+	            j++;
+	        }
+	        
+          //here we are basically trying to push these elements back to thee original arr1[] and arr2[] and clear the vector.
+          
+	        int q=0;
+	        for(int p=0;p<n;p++)
+	        {
+	            arr1[p]=v[q];
+	            q++;
+	        }
+	        
+	        for(int x=0;x<m;x++)
+	        {
+	            arr2[x]=v[q];
+	            q++;
+	        }
+	        
+	        v.clear();                      //used to clear the vector.
+	        
+	    
+	}     
